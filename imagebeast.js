@@ -1,7 +1,13 @@
+function handleErrors(response) {
+    if (!response.ok) {
+        return fetch('/images/placeholder.jpg');
+    }
+    return response;
+}
+
 function optimize(config){
 
   this.addEventListener('fetch', event => {
-
     var useWebp = config.hasOwnProperty('useWebp') ? config.useWebp : true;
     var useXr = config.hasOwnProperty('useXr') ? config.useXr : true;
     var useSaveData = config.hasOwnProperty('useSaveData') ? config.useSaveData : true;
@@ -10,7 +16,7 @@ function optimize(config){
     var headers = event.request.headers;
     var requestUrl = event.request.url;
 
-    if (/\.jpg$|.gif$|.png$/.test(requestUrl)) {
+    if (/\.jpg$|.gif$|.png$/.test(requestUrl) && !requestUrl.includes('placeholder')) { // Check for images and not our placeholder
       if(headers.get('save-data') && useSaveData){   // Check for the save data headers
         returnUrl = requestUrl.substr(0, requestUrl.lastIndexOf(".")) + '-savedata' + requestUrl.substr(requestUrl.lastIndexOf("."), requestUrl.length - 1);
       }
@@ -23,16 +29,10 @@ function optimize(config){
         }
       }
 
-      // TODO: What if the request fails?
-      if (returnUrl ===  undefined){
-        returnUrl = requestUrl;
-      }
+      if (returnUrl ===  undefined){ returnUrl = requestUrl; }
 
       event.respondWith(
-        fetch(returnUrl, {
-          mode: 'no-cors'
-        })
-      );
+        fetch(returnUrl).then(handleErrors));
       }
   });
 }

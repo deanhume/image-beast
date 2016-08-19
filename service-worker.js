@@ -9,3 +9,4 @@
   global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
   global.addEventListener('activate', event => event.waitUntil(global.clients.claim()));
 })(self);
+  
