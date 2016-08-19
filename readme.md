@@ -3,9 +3,9 @@
 
 ## The Image Beast
 
-From the murky depths of the sea, comes the image beast! It’s here to tame your every image need with a handy 1 KB script. There are so many great different image formats available these days, and many of them offer significant file size savings over the traditional formats (JPEG, GIF, PNG). Unfortunately not every browser provides support for all of these great image formats. We want to pass on these savings to all of our users.
+From the murky depths of the sea, comes the image beast! It’s here to tame your every image need with a handy [1 KB script](https://github.com/deanhume/image-beast/blob/master/imagebeast.min.js). There are so many great different image formats available these days, and many of them offer significant file size savings over the traditional formats (JPEG, GIF, PNG). Unfortunately not every browser provides support for all of these great image formats. We want to pass on these savings to all of our users.
 
-This is where the image beast comes in! Simply include this tiny 1KB script in your Service Worker, create the appropriate image formats, and it will handle the rest for you.
+This is where the image beast comes in! Simply include this [tiny 1KB script](https://github.com/deanhume/image-beast/blob/master/imagebeast.min.js) in your Service Worker, create the appropriate image formats, and it will handle the rest for you.
 
 Serve the lightest, leanest images to your users and help them get the fastest page load times possible. Grrrrrr!
 The image beast does all of these things:
