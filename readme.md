@@ -56,7 +56,7 @@ Next, simply import the script into your Service Worker (service-worker.js) and 
 
 As you can see from the code above, you can also configure image beast. For example, if you’d prefer not to return WebP images, then simply disable it in the config.
 
-If you’d like to see this in action, head over to [deanhume.github.io/image-beast](https://deanhume.github.io/image-beast/example.html) for a working example.
+If you’d like to see this in action, head over to [deanhume.github.io/image-beast](https://deanhume.github.io/image-beast/index.html) for a working example.
 
 ## How does it work under the hood?
 
