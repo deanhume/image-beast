@@ -1,7 +1,7 @@
 (global => {
   'use strict';
-  
-  importScripts('./imagebeast.js');
+
+  importScripts('./imagebeast.min.js');
   optimize({ useWebp: true, useXr: true, useSaveData: true });
 
   // Ensure that our service worker takes control of the page as soon as possible.

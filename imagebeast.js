@@ -1,12 +1,11 @@
 function handleErrors(response, returnNormal) {
-    if (!response.ok && !returnNormal) {
-        return fetch('/images/placeholder.jpg');
-    }
-    return response;
+  if (!response.ok && !returnNormal) { // Only return the placeholder if savedata and request error
+    return fetch('/images/placeholder.jpg');
+  }
+  return response;
 }
 
 function optimize(config){
-
   this.addEventListener('fetch', event => {
     var useWebp = config.hasOwnProperty('useWebp') ? config.useWebp : true;
     var useXr = config.hasOwnProperty('useXr') ? config.useXr : true;
@@ -34,21 +33,21 @@ function optimize(config){
       if (returnUrl ===  undefined){ returnUrl = requestUrl; } // Double check that we didnt miss any cases and fallback
 
       // Respond with the resulting image
-       event.respondWith(
-          fetch(returnUrl)
-            .then(handleErrors, requestUrl.includes('placeholder')) // Placeholder image for save data
-            .then(function(response) {
-              if (useCache) { // Should we cache the resource
-                return caches.open(dataCacheName).then(function(cache) {
-                  cache.put(returnUrl, response.clone());
-                  return response;
-                });
-              }
-              else {
-                return response; //Don't cache
-              }
-            })
-        );
-      }
+      event.respondWith(
+        fetch(returnUrl)
+        .then(handleErrors, requestUrl.includes('placeholder')) // Placeholder image for save data
+        .then(function(response) {
+          if (useCache) { // Should we cache the resource
+            return caches.open(dataCacheName).then(function(cache) {
+              cache.put(returnUrl, response.clone());
+              return response;
+            });
+          }
+          else {
+            return response; //Don't cache
+          }
+        })
+      );
+    }
   });
 }
