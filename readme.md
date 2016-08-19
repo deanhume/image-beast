@@ -1,7 +1,7 @@
 
 ![Image Beast](https://raw.githubusercontent.com/deanhume/image-beast/master/images/beast.jpg)
 
-## The Image Beast
+## The Image Beast - [10K Apart Entry](https://a-k-apart.com/gallery/The-Image-Beast)
 
 From the murky depths of the sea, comes the image beast! It’s here to tame your every image need with a handy [1 KB script](https://github.com/deanhume/image-beast/blob/master/imagebeast.min.js). There are so many great different image formats available these days, and many of them offer significant file size savings over the traditional formats (JPEG, GIF, PNG). Unfortunately not every browser provides support for all of these great image formats. We want to pass on these savings to all of our users.
 
