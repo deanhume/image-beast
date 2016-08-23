@@ -12,12 +12,12 @@ The image beast does all of these things:
 
 -   Serves WebP images to Google’s Chrome Browser
 -   Serves JpegXR images to Microsoft’s Edge Browser
--   Serves lean image for Android users with the Data Saver feature enabled
+-   Serves lean images to Android users with the Data Saver feature enabled
 -   Caches the images!
 
 ## Progressive Enhancement
 
-What about older browsers I hear you say? Well, the beast has them tamed too! Service Workers are the ultimate progressive enhancement and if your browser doesn’t support them they will simply return the images as normal. If your browser does support Service Workers, then the image beast simply uses it slippery tentacles to decide the perfect image format to return.
+What about older browsers I hear you say? Well, the beast has them tamed too! Service Workers are the ultimate progressive enhancement and if your browser doesn’t support them they will simply return the original images as normal. If your browser does support Service Workers, then the image beast simply uses it slippery tentacles to decide the perfect image format to return.
 
 [WebP](https://developers.google.com/speed/webp/)? [JPEGXR](https://msdn.microsoft.com/en-gb/library/windows/desktop/hh707223.aspx)? Or even a low resolution version of an image? The image beast is in control.
 
