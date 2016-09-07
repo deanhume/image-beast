@@ -25,7 +25,7 @@ What about older browsers I hear you say? Well, the beast has them tamed too! Se
 
 First up, you need to check if Service Workers are supported in your browser. If they are, create and register the Service Worker by adding the following code to your page.
 
-```
+```html
 <script>
  // Register the service worker
  if ('serviceWorker' in navigator) {
@@ -40,7 +40,7 @@ First up, you need to check if Service Workers are supported in your browser. If
 
 Next, simply import the script into your Service Worker (service-worker.js) and begin optimizing.
 
-```
+```js
 (global => {
   'use strict';
 
