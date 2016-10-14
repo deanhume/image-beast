@@ -34,20 +34,22 @@ function optimize(config){
 
       // Respond with the resulting image
       event.respondWith(
-        fetch(returnUrl)
-        .then(handleErrors, requestUrl.includes('placeholder')) // Placeholder image for save data
-        .then(function(response) {
-          if (useCache) { // Should we cache the resource
-            return caches.open(dataCacheName).then(function(cache) {
-              cache.put(returnUrl, response.clone());
-              return response;
-            });
-          }
-          else {
-            return response; //Don't cache
-          }
-        })
-      );
-    }
-  });
-}
+        caches.match(returnUrl)
+        .then(function (response) {
+          return response || fetch(returnUrl)
+          .then(handleErrors, requestUrl.includes('placeholder')) // Placeholder image for save data
+          .then(function(response) {
+            if (useCache) { // Should we cache the resource
+              return caches.open(dataCacheName).then(function(cache) {
+                cache.put(returnUrl, response.clone());
+                return response;
+              });
+            }
+            else {
+              return response; //Don't cache
+            }
+          });
+        }));
+      }
+    });
+  }
