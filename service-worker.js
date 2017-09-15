@@ -1,8 +1,8 @@
 (global => {
   'use strict';
 
-  importScripts('./imagebeast.min.js');
-  optimize({ useWebp: true, useXr: true, useSaveData: true, useCache: true });
+  importScripts('./imagebeast.js');
+  optimize({ useWebp: true, useXr: true,  useCache: true });
 
   // Ensure that our service worker takes control of the page as soon as possible.
   global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
